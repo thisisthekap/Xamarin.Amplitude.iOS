@@ -36,7 +36,7 @@ steps:
 
 - task: GitHubRelease@1
   inputs:
-    gitHubConnection: 'thisisthekap'
+    gitHubConnection: 'github.com_thisisthekap'
     repositoryName: 'thisisthekap/Xamarin.Amplitude.iOS'
     action: 'create'
     target: '$(Build.SourceVersion)'
