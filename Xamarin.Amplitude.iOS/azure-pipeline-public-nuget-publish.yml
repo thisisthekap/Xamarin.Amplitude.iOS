@@ -32,7 +32,7 @@ steps:
     msbuild /t:Pack /p:Configuration=Release
 
 - bash: |
-    dotnet nuget push Xamarin.Amplitude.iOS/nugetoutput/Xamarin.RevenueCat.iOS.*.nupkg -k "$(nugetOrgApiKey)" -s https://api.nuget.org/v3/index.json
+    dotnet nuget push Xamarin.Amplitude.iOS/nugetoutput/Xamarin.Amplitude.iOS.*.nupkg -k "$(nugetOrgApiKey)" -s https://api.nuget.org/v3/index.json
 
 - task: GitHubRelease@1
   inputs:
