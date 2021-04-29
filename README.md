@@ -4,7 +4,7 @@ Xamarin.iOS Bindings for Amplitude ([Website](https://amplitude.com), [Setup Ins
 
 ## NuGet Feed
 
-TODO
+NuGet packages are published on [nuget.org](https://www.nuget.org/packages/Xamarin.Amplitude.iOS/).
 
 ## Versioning Scheme
 
@@ -22,6 +22,13 @@ The versioning scheme of `Xamarin.Amplitude.iOS` is derived from the versioning 
 This Xamarin.iOS binding does NOT support certificate pinning which would be enabled by setting `AMPLITUDE_SSL_PINNING=1`.
 
 This project does not include the `ComodoRsaDomainValidationCA.der` file in the native library.
+
+## Included Frameworks
+
+According to the [docs of Amplitude](https://developers.amplitude.com/docs/ios), the frameworks `AdSupport.framework` and `CoreTelephony.framework` should be added to enable full support for all Amplitude features.
+
+The native library bound by this binding includes both of them:
+![linked-libs](readme-images/linked-libs.png)
 
 ## Troubleshooting
 
