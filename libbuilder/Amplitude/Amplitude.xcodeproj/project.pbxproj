@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB958D2F2639B7B600C80949 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB958D2E2639B7B600C80949 /* AdSupport.framework */; };
+		DB958D63263A9ECB00C80949 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB958D62263A9ECB00C80949 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		DB1C01552639928500A73655 /* libAmplitude.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAmplitude.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB958D2E2639B7B600C80949 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		DB958D62263A9ECB00C80949 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB958D63263A9ECB00C80949 /* CoreTelephony.framework in Frameworks */,
 				DB958D2F2639B7B600C80949 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		DB958D2D2639B7B600C80949 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB958D62263A9ECB00C80949 /* CoreTelephony.framework */,
 				DB958D2E2639B7B600C80949 /* AdSupport.framework */,
 			);
 			name = Frameworks;
