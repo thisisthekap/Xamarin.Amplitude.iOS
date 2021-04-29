@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Sepp.Mobile.AmplitudeBindings.iOS.Test
+namespace Xamarin.Amplitude.iOS.Test
 {
     public class Application
     {

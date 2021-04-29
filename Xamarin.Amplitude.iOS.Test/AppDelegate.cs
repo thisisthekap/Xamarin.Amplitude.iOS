@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Foundation;
-using UIKit;
+﻿using Foundation;
 using MonoTouch.NUnit.UI;
+using UIKit;
 
-namespace Sepp.Mobile.AmplitudeBindings.iOS.Test
+namespace Xamarin.Amplitude.iOS.Test
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 

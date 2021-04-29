@@ -2,20 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
-using Xamarin.Amplitude.iOS;
 
-namespace Sepp.Mobile.AmplitudeBindings.iOS.Test
+namespace Xamarin.Amplitude.iOS.Test
 {
     public static class BindingTestDataProvider
     {
-        public static object[] GetMethodsToTest(Type typeToTest)
+        public static object[] GetMethodsOfStaticTypeToTest(Type typeToTest)
+        {
+            return GetMethodsToTest(typeToTest, null);
+        }
+
+        public static object[] GetMethodsToTest<TType>(TType instance) where TType : class
+        {
+            return GetMethodsToTest(typeof(TType), instance);
+        }
+
+        private static object[] GetMethodsToTest(Type typeToTest, object instance)
         {
             List<object> ret = new List<object>();
-            var methods = typeToTest.GetMethods()
+            var methodsQuery = typeToTest.GetMethods()
                 .Where(m => m.IsPublic)
-                .Where(m => m.DeclaringType == typeToTest)
-                .Where(m => m.Name != nameof(Amplitude.InitializeApiKey))
-                .ToList();
+                .Where(m => m.DeclaringType == typeToTest);
+            if (instance == null)
+            {
+                methodsQuery = methodsQuery.Where(m => m.Name != "get_ClassHandle");
+            }
+
+            var methods = methodsQuery.ToList();
             if (methods.Count == 0)
             {
                 throw new ArgumentException($"type {typeToTest} has no methods to test");
@@ -55,27 +68,32 @@ namespace Sepp.Mobile.AmplitudeBindings.iOS.Test
 
                     if (pType == typeof(nint))
                     {
-                        return (nint)(-3);
+                        return (nint) (-3);
                     }
 
                     if (pType == typeof(int))
                     {
-                        return (int)(-4);
+                        return (int) (-4);
                     }
 
                     if (pType == typeof(AMPAdSupportBlock))
                     {
-                        return (AMPAdSupportBlock)(() => "a");
+                        return (AMPAdSupportBlock) (() => "a");
                     }
 
                     if (pType == typeof(AMPLocationInfoBlock))
                     {
-                        return (AMPLocationInfoBlock)(() => new NSDictionary(new NSString("a"), new NSString("b")));
+                        return (AMPLocationInfoBlock) (() => new NSDictionary(new NSString("a"), new NSString("b")));
+                    }
+
+                    if (pType == typeof(Action))
+                    {
+                        return (Action) (() => { });
                     }
 
                     throw new ArgumentException($"parameter type not supported: {pType} (method: {method})");
                 }).ToArray();
-                ret.Add(new object[] { method, parameters });
+                ret.Add(new object[] {instance, method, parameters});
             }
 
             return ret.ToArray();
