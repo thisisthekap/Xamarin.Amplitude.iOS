@@ -4,6 +4,8 @@ Xamarin.iOS Bindings for Amplitude ([Website](https://amplitude.com), [Setup Ins
 
 ## NuGet Feed
 
+NuGet packages are built using Azure DevOps: [![Build Status](https://funmusic.visualstudio.com/Xamarin%20Amplitude%20Bindings/_apis/build/status/Production-Bindings-Xamarin.RevenueCat.iOS?branchName=refs%2Ftags%2Frelease-bindings-v8.2.1.8)](https://funmusic.visualstudio.com/Xamarin%20Amplitude%20Bindings/_build/latest?definitionId=167&branchName=refs%2Ftags%2Frelease-bindings-v8.2.1.8)
+
 NuGet packages are published on [nuget.org](https://www.nuget.org/packages/Xamarin.Amplitude.iOS/).
 
 ## Versioning Scheme
