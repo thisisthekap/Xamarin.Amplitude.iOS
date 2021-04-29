@@ -42,7 +42,7 @@ Add `-gcc_flags "-ObjC"` to the `MtouchExtraArgs` XML element of your project fi
 
 ![troubleshooting-unrecognized-selector](readme-images/troubleshooting-unrecognized-selector.png)
 
-## How to bind new version
+## How to bind a new version
 
 This section explains how to create resp. adapt the bindings to bind to a newer version of Amplitude for iOS.
 
